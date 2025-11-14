@@ -3,8 +3,8 @@ from torch.utils.data import DataLoader
 from sklearn.metrics import accuracy_score, f1_score
 from sklearn.model_selection import train_test_split
 
-from data import load_all_shot_files, prepare_dataframe, ShotSequenceDataset
-from models import RNNClassifier, TCNClassifier, TransformerClassifier
+from data_preprocessing import load_all_shot_files, prepare_dataframe, ShotSequenceDataset
+from training_models import RNNClassifier, TCNClassifier, TransformerClassifier
 from losses import compute_player_baselines, BaselineWeightedCE
 
 
