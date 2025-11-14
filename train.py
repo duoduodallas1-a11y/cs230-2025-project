@@ -66,10 +66,10 @@ def evaluate(model, loader, device):
 
 def run_experiment(
     model_name="transformer",
-    data_dir="data/nba_shots",
+    data_dir="data/train",
     seq_len=10,
     epochs=5,
-    batch_size=64,
+    batch_size=100,
 ):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
