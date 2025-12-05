@@ -109,12 +109,17 @@ def run_experiment(
     for epoch in range(1, epochs + 1):
         train_loss = train_one_epoch(model, train_loader, optimizer, criterion, device)
         val_acc, val_f1 = evaluate(model, val_loader, device)
-        print("Debug: This line works")
-        print(
-            f"[{model_name}] Epoch {epoch}: "
-            f"train_loss={train_loss:.4f}, "
-            f"val_acc={val_acc:.3f}, val_macroF1={val_f1:.3f}"
-        )
+        print('Epoch (', epoch, '/', epochs, ')')
+        print('---------------------------------')
+        print('Train loss: %0.4f' % (train_loss))
+        print('Val acc: %0.4f' % (val_acc))
+        print('Val Macro F1: %0.4f' % (val_f1))
+        print('---------------------------------')
+        # print(
+        #     f"[{model_name}] Epoch {epoch}: "
+        #     f"train_loss={train_loss:.4f}, "
+        #     f"val_acc={val_acc:.3f}, val_macroF1={val_f1:.3f}"
+        # )
 
     # ---------- Final test evaluation ----------
     test_acc, test_f1 = evaluate(model, test_loader, device)
@@ -127,4 +132,4 @@ if __name__ == "__main__":
     # Example: run all three models for comparison
     for name in ["rnn", "tcn", "transformer"]:
         print(f"\n=== Running {name.upper()} ===")
-        run_experiment(model_name=name, data_dir="data/nba_shots", seq_len=10, epochs=5)
+        run_experiment(model_name=name, data_dir="data/train", seq_len=10, epochs=100)
