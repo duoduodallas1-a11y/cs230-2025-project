@@ -109,11 +109,12 @@ def run_experiment(
     for epoch in range(1, epochs + 1):
         train_loss = train_one_epoch(model, train_loader, optimizer, criterion, device)
         val_acc, val_f1 = evaluate(model, val_loader, device)
-        print("Debug: this line works BRUH")
-        print("[{model_name}] Epoch {epoch}:")
-        print("train_loss={train_loss:.4f},")
-        print("val_acc={val_acc:.3f}, val_macroF1={val_f1:.3f}")
-
+        print("Debug: This line works")
+        print(
+            f"[{model_name}] Epoch {epoch}: "
+            f"train_loss={train_loss:.4f}, "
+            f"val_acc={val_acc:.3f}, val_macroF1={val_f1:.3f}"
+        )
 
     # ---------- Final test evaluation ----------
     test_acc, test_f1 = evaluate(model, test_loader, device)
