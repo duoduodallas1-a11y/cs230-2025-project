@@ -109,6 +109,7 @@ def run_experiment(
     for epoch in range(1, epochs + 1):
         train_loss = train_one_epoch(model, train_loader, optimizer, criterion, device)
         val_acc, val_f1 = evaluate(model, val_loader, device)
+        print("Debug: this line works BRUH")
         print(f"[{model_name}] Epoch {epoch}: ")
         print(f"train_loss={train_loss:.4f}, ")
         print(f"val_acc={val_acc:.3f}, val_macroF1={val_f1:.3f}")
