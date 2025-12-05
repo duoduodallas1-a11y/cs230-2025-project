@@ -110,8 +110,8 @@ def run_experiment(
         train_loss = train_one_epoch(model, train_loader, optimizer, criterion, device)
         val_acc, val_f1 = evaluate(model, val_loader, device)
         print(
-            f"[{model_name}] Epoch {epoch}: "
-            f"train_loss={train_loss:.4f}, "
+            f"[{model_name}] Epoch {epoch}: ",
+            f"train_loss={train_loss:.4f}, ",
             f"val_acc={val_acc:.3f}, val_macroF1={val_f1:.3f}"
         )
 
