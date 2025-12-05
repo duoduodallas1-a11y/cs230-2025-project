@@ -66,7 +66,7 @@ def evaluate(model, loader, device):
 
 def run_experiment(
     model_name="transformer",
-    data_dir="data/train",
+    data_dir="data\train",
     seq_len=10,
     epochs=5,
     batch_size=100,
