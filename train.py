@@ -112,8 +112,8 @@ def run_experiment(
         print('Epoch (', epoch, '/', epochs, ')')
         print('---------------------------------')
         print('Train loss: %0.4f' % (train_loss))
-        print('Val acc: %0.4f' % (val_acc))
-        print('Val Macro F1: %0.4f' % (val_f1))
+        print('Dev accuracy: %0.4f' % (val_acc))
+        print('Dev Macro F1: %0.4f' % (val_f1))
         print('---------------------------------')
         # print(
         #     f"[{model_name}] Epoch {epoch}: "
@@ -132,4 +132,4 @@ if __name__ == "__main__":
     # Example: run all three models for comparison
     for name in ["rnn", "tcn", "transformer"]:
         print(f"\n=== Running {name.upper()} ===")
-        run_experiment(model_name=name, data_dir="data/train", seq_len=10, epochs=100)
+        run_experiment(model_name=name, data_dir="data", seq_len=10, epochs=100)
