@@ -130,6 +130,6 @@ def run_experiment(
 
 if __name__ == "__main__":
     # Example: run all three models for comparison
-    for name in ["transformer"]:
+    for name in ["rnn", "tcn", "transformer"]:
         print(f"\n=== Running {name.upper()} ===")
         run_experiment(model_name=name, data_dir="data", seq_len=10, epochs=60)
